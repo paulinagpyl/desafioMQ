@@ -1,0 +1,132 @@
+.foto{width: 20%;}
+.fotoPag{width: 10%;}
+.fotoHm{width: 20%;}
+.txt_bco{color: white;}
+
+.productos{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px;
+} 
+body{
+    display:grid;
+    height: 100vh;
+    justify-content: center;
+}
+nav{
+    grid-area: nav;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #01579b;
+    .pH{
+        text-align: end;
+    }
+}
+ul{display: none;}
+aside{
+    grid-area: aside;
+    text-align: center;
+    justify-content: center;
+    background-color: #e1e2e1;
+    padding-bottom: 5px;
+    width: 100%;
+    .selector{
+        width: 80%;
+    }
+}
+main{
+    grid-area: main;
+    /*padding-left: 5%;*/
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+footer{
+    grid-area: footer;
+    background-color: #002f6c;
+    padding-top: 10px;
+    text-align: center;
+}
+button{
+    background-color: #01579b;
+    border-radius: 5%;
+    padding: 5px;
+    width: 50%;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-radius: 2%;
+}
+.paginas{
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+/* hasta 576 sin tomarlo */
+@media (max-width: 576px) {
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 10fr 1fr;
+        grid-template-areas: 
+            "nav"
+            "aside"
+            "main"
+            "footer";
+    }
+    .productos{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    nav{
+        justify-content: space-between;
+    }
+}
+
+/* desde  576 incluido el 576 */
+@media (min-width: 576px) {
+    body{
+        grid-template-columns: 15% 85%;
+        grid-template-rows: 1fr;
+        height: 100%;
+        grid-template-areas: 
+            "nav aside"
+            "nav main"
+            "footer main";
+    }
+    .productos{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content:flex-start;
+    }
+    ul{
+        display: flex;
+        justify-content:left;
+        flex-direction: column;
+    } 
+    .fotoPag{
+        width: 5%;
+    }
+    .paginas{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .fotoHm{
+        display: none;
+    }
+}
